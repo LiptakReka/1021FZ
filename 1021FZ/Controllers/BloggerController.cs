@@ -28,5 +28,14 @@ namespace _1021FZ.Controllers
             return await _context.bloggers.ToListAsync();
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Blogger>> PostBloggers(Blogger blogt)
+        {
+            _context.bloggers.Add(blogt);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetProduct", new { id = blogt.Id }, blogt);
+        }
+
     }
 }

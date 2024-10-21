@@ -11,11 +11,14 @@ namespace _1021FZ.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         
         public DbSet<Blogger> bloggers { get; set; }
+        public DbSet<BlogRegistry> blogRegistry { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+
         }
 
 
